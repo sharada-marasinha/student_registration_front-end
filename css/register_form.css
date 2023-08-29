@@ -1,0 +1,155 @@
+
+*{
+    margin: 0;
+    padding: 0; 
+    font-family: 'Poppins', sans-serif;
+ }
+body {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(/img/Untitled\ design.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    top: 100px;
+    position: relative;
+    
+
+}
+
+#Birthday_Day{
+    background-color: #2d3436;
+    color: #fff;
+}
+
+form {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: auto;
+    
+}
+
+#tbl {
+    
+    width: 100%;
+    max-width: auto;
+    border-spacing: 5;
+    margin: auto;
+}
+
+td {
+
+    padding: 5px;
+}
+
+input[type="text"],
+input[type="radio"],
+input[type="checkbox"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+textarea {
+    resize: vertical;
+}
+
+#btnSubmit{
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#btnSubmit:hover {
+    background-color: #0056b3;
+}
+
+#btnReset {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+#btnReset:hover {
+    background-color: #aaa;
+}
+
+
+#upluad_btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color:white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.h1{
+    text-align: center;
+}
+
+.submitTd{
+    border-radius: 10px;
+    text-align: center;
+    background-color: #333;
+    padding: 10px 10px;
+}
+#search_bar{
+    position: relative;
+    align-items: center;
+    width: 400px;
+    border-radius: 15px;
+  }
+  #search_btn{
+    position: relative;
+    align-items: center;
+    background-color: #cc8e35;
+    color: #fff;
+    width: 100px;
+    font-weight: 1000;
+    border-radius: 15px;
+    border: none;
+  }
+  
