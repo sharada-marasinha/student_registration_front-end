@@ -101,6 +101,128 @@ function searchBtn() {
 
 
 
+
+
+
+
+function viewprofile(id) {
+  alert("View Profile"+id);
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  var requestOptions = {
+    method: 'GET',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+  
+  fetch(`http://localhost:8080/student/std-id/${id}`, requestOptions)
+    .then(response => response.text())
+    .then(result => lodeProfile(result)
+    )
+    .catch(error => console.log('error', error));
+}
+
+function lodeProfile(result) {
+  console.log(result);
+ let stdObj = JSON.parse(result);
+  let body = ``;
+  body += `<tr>
+  <td>
+  <div class="sidenav">
+  <div class="profile">
+      <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
+
+      <div class="name">
+          ${stdObj.firstName}
+      </div>
+      <div class="job">
+      ${stdObj.email}
+      </div>
+  </div>
+
+  <div class="sidenav-url">
+      <div class="url">
+        <button onclick="deleteStudent(${stdObj.id})">Delete</button>
+          <hr align="center">
+      </div>
+      <div class="url">
+          <a href="#settings">Settings</a>
+          <hr align="center">
+      </div>
+  </div>
+</div>
+<!-- End -->
+
+<!-- Main -->
+<div class="main">
+  <h2>IDENTITY</h2>
+  <div class="card">
+      <div class="card-body">
+          <i class="fa fa-pen fa-xs edit"></i>
+          <table>
+              <tbody>
+                  <tr>
+                      <td>Name</td>
+                      <td>:</td>
+                      <td>${stdObj.firstName+" "+stdObj.lastName}</td>
+                  </tr>
+                  <tr>
+                      <td>Email</td>
+                      <td>:</td>
+                      <td>${stdObj.email}</td>
+                  </tr>
+                  <tr>
+                      <td>Address</td>
+                      <td>:</td>
+                      <td>${stdObj.address}</td>
+                  </tr>
+                  <tr>
+                      <td>Hobbies</td>
+                      <td>:</td>
+                      <td>${stdObj.hobbies+" : "+stdObj.otherHobby}</td>
+                  </tr>
+                  <tr>
+                      <td>Selected Course</td>
+                      <td>:</td>
+                      <td>${stdObj.selectedCourse}</td>
+                  </tr>
+            
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+  <h2>SOCIAL MEDIA</h2>
+  <div class="card">
+      <div class="card-body">
+          <i class="fa fa-pen fa-xs edit"></i>
+          <div class="social-media">
+            <table >
+              <tr>
+              <th>classX</th>
+              <th>classXII</th>
+              <th>graduation</th>
+              <th>master></th>
+              </tr>
+              <tr>
+              <td>${stdObj.classX}</td>
+              <td>${stdObj.classXII}</td>
+              <td>${stdObj.graduation}</th>
+              <td>${stdObj.masters}</td>
+              </tr>
+            </table>
+          </div>
+      </div>
+  </div>
+</div>
+  </td>
+</tr>`;
+
+studentProfile.innerHTML = body;
+}
+
+
 // ---------------------------------Delete Student--------------------------------------
 
 function deleteStudent(idForDelete) {
@@ -131,53 +253,4 @@ function deleteStudent(idForDelete) {
         .catch((error) => console.log("error", error));
     }
   });
-}
-
-
-
-function viewprofile(id) {
-  alert("View Profile"+id);
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-  
-  var requestOptions = {
-    method: 'GET',
-    headers: myHeaders,
-    redirect: 'follow'
-  };
-  
-  fetch(`http://localhost:8080/student/std-id/${id}`, requestOptions)
-    .then(response => response.text())
-    .then(result => lodeProfile(result)
-    )
-    .catch(error => console.log('error', error));
-}
-
-function lodeProfile(result) {
-  console.log(result);
-  let body = ``;
-  body += `<tr>
-  <td>
-    <div class="testmonals-col">
-    <img src="img/Untitled design round 2.png" alt="">
-      <div>
-          <h2>${result.firstName + " " + result.lastName}</h2>
-           <br>
-           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam ut maiores, error fugiat blanditiis nisi assumenda doloremque, officiis ipsum quis reiciendis! Neque corrupti ea delectus repellat dicta laborum obcaecati deserunt?</p>
-           <br>
-          <h4>${result.email}</h4>
-          <h6>${result.country}</h6>
-          <br>
-          <input type="button" onclick="deleteStudent(${result.id
-  })" value="Delete">
-          <input type="button" value="Update">
-          <input type="button" onclick="viewProfile(${result.id
-  })" value="View Profile">
-          <h6 class="pinCode">PIN:STD#0${result.id}</h6>
-      </div>
-  </div>
-  </td>
-</tr>`;
-
-studentProfile.innerHTML = body;
 }

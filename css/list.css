@@ -45,6 +45,17 @@
     margin-right: 200px;
 
  }
+ .profile_card{
+   position: absolute;
+   top: 500px;
+   border-radius: 10px;
+   text-align: center;
+   background: #fff3f3;
+   padding: 50px;
+   padding: 100px;
+   
+   margin : 5vh;
+ }
  .testmonals-col img{
     height: 150px;
     margin-left: 5px;
