@@ -26,9 +26,6 @@ function searchBtn() {
 <td>city</td>
 <td>pinCode</td>
 
-
-
-
 </tr>`;
         let tblBody2 = `<tr>
 <td>id</td>

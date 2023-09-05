@@ -17,7 +17,6 @@ function loadProfiles() {
   fetch("http://localhost:8080/student")
     .then((response) => response.json())
     .then((res) => {
-      console.log(res);
       res.forEach((element) => {
         body += `<tr>
           <td>

@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 let studentTable = document.getElementById("tblStudent");
 let studentTable2 = document.getElementById("tblStudent2");
 
@@ -19,42 +10,37 @@ var requestOptions = {
     redirect: "follow",
 };
 
-let tblBody =   `<tr>
-<td>id</td>
-<td>First Name</td>
-<td>Last Name</td>
-<td>dateOfBirth</td>
-<td>Email</td>
-<td>mobileNumber</td>
-<td>gender</td>
-<td>address</td>
-<td>city</td>
-<td>pinCode</td>
+let tblBody = `<tr>
+                <td>id</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>dateOfBirth</td>
+                <td>Email</td>
+                <td>mobileNumber</td>
+                <td>gender</td>
+                <td>address</td>
+                <td>city</td>
+                <td>pinCode</td>
+              </tr>`;
+
+let tblBody2 = `<tr>
+                    <td>id</td>
+                    <td>First Name</td>
+                    <td>state</td>
+                    <td>country</td>
+                    <td>hobbies</td>
+                    <td>otherHobby</td>
+                    <td>classX</td>
+                    <td>classXII</td>
+                    <td>graduation</td>
+                    <td>masters</td>
+                    <td>selectedCourse</td>
+                </tr>`;
 
 
-
-
-</tr>`;
-let tblBody2 =   `<tr>
-<td>id</td>
-<td>First Name</td>
-<td>state</td>
-<td>country</td>
-<td>hobbies</td>
-<td>otherHobby</td>
-<td>classX</td>
-<td>classXII</td>
-<td>graduation</td>
-<td>masters</td>
-<td>selectedCourse</td>
-
-
-</tr>`;
 fetch("http://localhost:8080/student")
 .then(response => response.json())
 .then(res => {
-
-
     res.forEach(element => {
         
         tblBody += `<tr>
@@ -88,7 +74,6 @@ fetch("http://localhost:8080/student")
 
     studentTable.innerHTML = tblBody;
     studentTable2.innerHTML = tblBody2;
-
 
 })
 
