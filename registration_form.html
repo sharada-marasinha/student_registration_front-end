@@ -10,56 +10,15 @@
         type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="sweetalert2.min.css">
     <title>Student Registation</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Student Register Form</a>
-            <div class="searchBox">
-                <input type="text2" id="search_bar" placeholder=" ( : search enithing">
-                <input type="button" href="view_form.html" id="search_btn" onclick="searchBtn()" value="Search">
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar"
-                aria-labelledby="offcanvasDarkNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Manage</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+    <nav class="navbar navbar-dark bg-dark fixed-top" id="navBar">
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="registration_form.html">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="view_form.html">View All</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="profile_list_form.html">View As Profiles</a>
-                          </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Manage All</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </nav>
+
+    <form>
         <table align="center" cellpadding="10" id="tbl">
 
             <!----- First Name ---------------------------------------------------------->
@@ -396,7 +355,15 @@
                                 <input type="radio" id="Course_BA" name="Course" value="B.A">
                             </td>
                         </tr>
-                    </table>   
+                    </table>
+                    
+                    
+                    
+                   
+                    
+                    
+                    
+                    
                 </td>
             </tr>
 
@@ -405,8 +372,13 @@
                     Image Uploader
                 </td>
                 <td>
-                    <input type="file" id="fileInput" accept="image/*">
-                    <div id="preview"></div>
+                    <form action="http://localhost:8080/student/upload" method="POST" enctype="multipart/form-data">
+                        <!-- File input field -->
+                        <input type="file" name="file">
+                        <!-- Other form fields if needed -->
+                        <button type="submit">Upload File</button>
+                    </form>
+                    
                 </td>
             </tr>
             <tr>
@@ -437,7 +409,11 @@
                     <input type="reset" id="btnReset" value="Reset">
                 </td>
             </tr>
+
         </table>
+
+    </form>
+    <script src="js/nav.js"></script>
     <script src="js/search.js"></script>
     <script src="/js/register_form.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

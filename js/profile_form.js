@@ -18,9 +18,7 @@ function loadProfiles() {
     .then((response) => response.json())
     .then((res) => {
       res.forEach((element) => {
-        body += `<tr>
-          <td>
-            <div class="testmonals-col">
+        body += `<div class="testmonals-col">
               <img src="img/Untitled design round 2.png" alt="">
               <div>
                    <h2>${element.firstName + " " + element.lastName}</h2>
@@ -30,16 +28,14 @@ function loadProfiles() {
                   <h4>${element.email}</h4>
                   <h6>${element.country}</h6>
                   <br>
-                  <input type="button" onclick="deleteStudent(${element.id
+                  <input type="button" class="btn btn-danger" onclick="deleteStudent(${element.id
           })" value="Delete">
-                  <input type="button" value="Update">
-                  <input type="button" onclick="viewprofile(${element.id
+                  <input type="button" class="btn btn-success" value="Update">
+                  <input type="button" class="btn btn-primary" onclick="viewprofile(${element.id
           })" value="View Profile">
                   <h6 class="pinCode">PIN:STD#0${element.id}</h6>
               </div>
-          </div>
-          </td>
-        </tr>`;
+          </div>`;
       });
 
       studentProfile.innerHTML = body;
@@ -51,7 +47,6 @@ loadProfiles();
 
 // --------------------------------Search -----------------------------------
 function searchBtn() {
-  alert("Searching...");
   const searchText = document.getElementById("search_bar").value;
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
@@ -105,7 +100,6 @@ function searchBtn() {
 
 
 function viewprofile(id) {
-  alert("View Profile"+id);
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   
@@ -123,7 +117,6 @@ function viewprofile(id) {
 }
 
 function lodeProfile(result) {
-  console.log(result);
  let stdObj = JSON.parse(result);
   let body = ``;
   body += `<tr>
@@ -142,11 +135,12 @@ function lodeProfile(result) {
 
   <div class="sidenav-url">
       <div class="url">
-        <button onclick="deleteStudent(${stdObj.id})">Delete</button>
+
           <hr align="center">
       </div>
       <div class="url">
-          <a href="#settings">Settings</a>
+      <button class="btn btn-danger" onclick="deleteStudent(${stdObj.id})">Delete</button>
+      <button class="btn btn-success" onclick="">Update</button>
           <hr align="center">
       </div>
   </div>

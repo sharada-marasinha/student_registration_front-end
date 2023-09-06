@@ -1,0 +1,25 @@
+.searchBox{
+  top: 70px;
+ left: 60%;
+  position: fixed;
+  
+}
+#search_bar{
+    align-items: center;
+    position: relative;
+    width: 400px;
+    border-radius: 15px;
+    background-color: #cc8e35;
+    border: none;
+    color: #fff;
+  }
+  #search_btn{
+    position: relative;
+    align-items: center;
+    background-color: #cc8e35;
+    color: #fff;
+    width: 100px;
+    font-weight: 1000;
+    border-radius: 15px;
+    border: none;
+  }
