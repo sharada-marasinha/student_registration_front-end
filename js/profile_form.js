@@ -1,4 +1,5 @@
 let studentProfile = document.getElementById("profile");
+let studentProfile2 = document.getElementById("stdProfile");
 
 // ---------------------------------Loading profile----------------------------------------------------
 
@@ -31,9 +32,8 @@ function loadProfiles() {
                   <input type="button" class="btn btn-danger" onclick="deleteStudent(${element.id
           })" value="Delete">
                   <input type="button" class="btn btn-success" value="Update">
-                  <input type="button" class="btn btn-primary" onclick="viewprofile(${element.id
-          })" value="View Profile">
-                  <h6 class="pinCode">PIN:STD#0${element.id}</h6>
+                  <input type="button" class="btn btn-primary" onclick="viewprofile(${element.id})" value="View Profile">
+                  <h6 class="pinCode">PIN:STD${element.selectedCourse}#0${element.id}</h6>
               </div>
           </div>`;
       });
@@ -64,40 +64,30 @@ function searchBtn() {
       let body = ``;
 
       data.forEach((element) => {
-        body += `<tr>
-          <td>
-            <div class="testmonals-col">
-            <img src="img/Untitled design round 2.png" alt="">
-              <div>
-                  <h2>${element.firstName + " " + element.lastName}</h2>
-                   <br>
-                   <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam ut maiores, error fugiat blanditiis nisi assumenda doloremque, officiis ipsum quis reiciendis! Neque corrupti ea delectus repellat dicta laborum obcaecati deserunt?</p>
-                   <br>
-                  <h4>${element.email}</h4>
-                  <h6>${element.country}</h6>
-                  <br>
-                  <input type="button" onclick="deleteStudent(${element.id
-          })" value="Delete">
-                  <input type="button" value="Update">
-                  <input type="button" onclick="viewProfile(${element.id
-          })" value="View Profile">
-                  <h6 class="pinCode">PIN:STD#0${element.id}</h6>
-              </div>
-          </div>
-          </td>
-        </tr>`;
+        body += `<div class="testmonals-col">
+        <img src="img/Untitled design round 2.png" alt="">
+        <div>
+             <h2>${element.firstName + " " + element.lastName}</h2>
+             <br>
+             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam ut maiores, error fugiat blanditiis nisi assumenda doloremque, officiis ipsum quis reiciendis! Neque corrupti ea delectus repellat dicta laborum obcaecati deserunt?</p>
+             <br>
+            <h4>${element.email}</h4>
+            <h6>${element.country}</h6>
+            <br>
+            <input type="button" class="btn btn-danger" onclick="deleteStudent(${element.id
+    })" value="Delete">
+            <input type="button" class="btn btn-success" value="Update">
+            <input type="button" class="btn btn-primary" onclick="viewprofile(${element.id
+    })" value="View Profile">
+            <h6 class="pinCode">PIN:STD${element.selectedCourse}#0${element.id}</h6>
+        </div>
+    </div>`;
       });
 
       studentProfile.innerHTML = body;
     })
     .catch((error) => console.log("error", error));
 }
-
-
-
-
-
-
 
 function viewprofile(id) {
   var myHeaders = new Headers();
@@ -117,10 +107,13 @@ function viewprofile(id) {
 }
 
 function lodeProfile(result) {
+  
+  window.open("student_profile.html", "top");
+
  let stdObj = JSON.parse(result);
+ 
   let body = ``;
-  body += `<tr>
-  <td>
+  body += `
   <div class="sidenav">
   <div class="profile">
       <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
@@ -208,14 +201,10 @@ function lodeProfile(result) {
           </div>
       </div>
   </div>
-</div>
-  </td>
-</tr>`;
+</div>`;
 
-studentProfile.innerHTML = body;
+studentProfile2.innerHTML = body;
 }
-
-
 // ---------------------------------Delete Student--------------------------------------
 
 function deleteStudent(idForDelete) {
