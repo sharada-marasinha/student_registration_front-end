@@ -372,12 +372,13 @@
                     Image Uploader
                 </td>
                 <td>
-                    <form action="http://localhost:8080/student/upload" method="POST" enctype="multipart/form-data">
+                   
                         <!-- File input field -->
-                        <input type="file" name="file">
+                        <input type="file" name="file" id="img">
                         <!-- Other form fields if needed -->
-                        <button type="submit">Upload File</button>
-                    </form>
+                        <!-- <button type="submit" onclick="imageUpload()">Upload File</button> -->
+                        <input type="button" value="Upload File" onclick="imageUpload()">
+                    
                     
                 </td>
             </tr>

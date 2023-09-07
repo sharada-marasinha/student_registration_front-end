@@ -20,7 +20,7 @@ function loadProfiles() {
     .then((res) => {
       res.forEach((element) => {
         body += `<div class="testmonals-col">
-              <img src="img/Untitled design round 2.png" alt="">
+              <img src="../profile/${element.imageName}" alt="">
               <div>
                    <h2>${element.firstName + " " + element.lastName}</h2>
                    <br>

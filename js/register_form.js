@@ -111,3 +111,28 @@ function submitForm() {
           ));
 
 }
+const image=document.getElementById("img");
+
+function imageUpload(){
+const formData=new FormData();
+formData.append('file',image.files[0]);
+var requestOptions = {
+    method: 'POST',
+    // headers: myHeaders,
+    body: formData
+    // redirect: 'follow'
+};
+
+fetch("http://localhost:8080/student", requestOptions)
+    .then(response => response.text())
+    .then(result => Swal.fire(
+        'Good job!',
+        // `Register Successfully ${firstName}`,
+        'success'
+      ))
+    .catch(error => Swal.fire(
+        'Good job!',
+        // `Register failed Try again ! ${firstName}`,
+        'success'
+      ));
+}
