@@ -26,6 +26,8 @@ function Student(firstName, lastName, dobDay, dobMonth, dobYear, email, mobileNu
     this.selectedCourse = selectedCourse;
 }
 
+const image=document.getElementById("img");
+
 function submitForm() {
     // Retrieve values from input fields
     var firstName = document.getElementById("f_name").value;
@@ -82,19 +84,40 @@ function submitForm() {
         mastersBoard, mastersPercentage, mastersYrOfPassing,
         selectedCourse);
 
-    // Display student object (you can modify this to do whatever you want)
-    var studentJSON = JSON.stringify(student);
-    console.log(studentJSON);
+    //================================================================
 
+    const formData=new FormData();
+    
+    formData.append('firstName',student.firstName);
+    formData.append('lastName',student.lastName);
+    formData.append('dateOfBirth',student.dateOfBirth);
+    formData.append('email',student.email);
+    formData.append('mobileNumber',student.mobileNumber);
+    formData.append('gender',student.gender);
+    formData.append('address',student.address);
+    formData.append('city',student.city);
+    formData.append('pinCode',student.pinCode);
+    formData.append('state',student.state);
+    formData.append('country',student.country);
+    formData.append('hobbies',student.hobbies);
+    formData.append('otherHobby',student.otherHobby);
+    formData.append('classX',student.classX);
+    formData.append('classXII',student.classXII);
+    formData.append('graduation',student.graduation);
+    formData.append('masters',student.masters);
+    formData.append('selectedCourse',student.selectedCourse);
+    formData.append('file',image.files[0]);
+
+    //----------------------------------------------------------------
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
 
     var requestOptions = {
         method: 'POST',
-        headers: myHeaders,
-        body: studentJSON,
-        redirect: 'follow'
+       // headers: myHeaders,
+        body: formData,
+        //redirect: 'follow'
     };
 
     fetch("http://localhost:8080/student", requestOptions)
@@ -111,7 +134,7 @@ function submitForm() {
           ));
 
 }
-const image=document.getElementById("img");
+
 
 function imageUpload(){
 const formData=new FormData();

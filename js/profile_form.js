@@ -20,7 +20,7 @@ function loadProfiles() {
     .then((res) => {
       res.forEach((element) => {
         body += `<div class="testmonals-col">
-              <img src="../profile/${element.imageName}" alt="">
+              <img src="profile/${element.imageName}" alt="">
               <div>
                    <h2>${element.firstName + " " + element.lastName}</h2>
                    <br>
@@ -65,7 +65,7 @@ function searchBtn() {
 
       data.forEach((element) => {
         body += `<div class="testmonals-col">
-        <img src="img/Untitled design round 2.png" alt="">
+        <img src="profile/${element.imageName}" alt="">
         <div>
              <h2>${element.firstName + " " + element.lastName}</h2>
              <br>
@@ -108,7 +108,7 @@ function viewprofile(id) {
 
 function lodeProfile(result) {
   
-  window.open("student_profile.html", "top");
+  //window.open("student_profile.html", "top");
 
  let stdObj = JSON.parse(result);
  
@@ -116,12 +116,12 @@ function lodeProfile(result) {
   body += `
   <div class="sidenav">
   <div class="profile">
-      <img src="https://imdezcode.files.wordpress.com/2020/02/imdezcode-logo.png" alt="" width="100" height="100">
+    <img src="profile/${stdObj.imageName}" alt="">
 
       <div class="name">
-          ${stdObj.firstName}
+          ${stdObj.firstName+" "+stdObj.lastName}
       </div>
-      <div class="job">
+      <div class="email">
       ${stdObj.email}
       </div>
   </div>
@@ -142,26 +142,51 @@ function lodeProfile(result) {
 
 <!-- Main -->
 <div class="main">
-  <h2>IDENTITY</h2>
+  <h2 class="headers">IDENTITY</h2>
   <div class="card">
       <div class="card-body">
           <i class="fa fa-pen fa-xs edit"></i>
           <table>
               <tbody>
                   <tr>
-                      <td>Name</td>
+                      <td>Full Name</td>
                       <td>:</td>
                       <td>${stdObj.firstName+" "+stdObj.lastName}</td>
                   </tr>
                   <tr>
-                      <td>Email</td>
+                  <td>Email</td>
+                  <td>:</td>
+                  <td>${stdObj.email}</td>
+                </tr>
+                  <tr>
+                      <td>Birth Day</td>
                       <td>:</td>
-                      <td>${stdObj.email}</td>
+                      <td>${stdObj.dateOfBirth}</td>
+                  </tr>
+                  <tr>
+                  <td>Gender</td>
+                  <td>:</td>
+                  <td>${stdObj.gender}</td>
                   </tr>
                   <tr>
                       <td>Address</td>
                       <td>:</td>
                       <td>${stdObj.address}</td>
+                  </tr>
+                  <tr>
+                  <td>City</td>
+                  <td>:</td>
+                  <td>${stdObj.city}</td>
+                  </tr>
+                  <tr>
+                  <td>Pin Code</td>
+                  <td>:</td>
+                  <td>${stdObj.pinCode}</td>
+                  </tr>
+                  <tr>
+                  <td>State</td>
+                  <td>:</td>
+                  <td>${stdObj.state}</td>
                   </tr>
                   <tr>
                       <td>Hobbies</td>
@@ -179,7 +204,7 @@ function lodeProfile(result) {
       </div>
   </div>
 
-  <h2>SOCIAL MEDIA</h2>
+  <h2 class="headers">EDUCATION</h2>
   <div class="card">
       <div class="card-body">
           <i class="fa fa-pen fa-xs edit"></i>
@@ -203,7 +228,7 @@ function lodeProfile(result) {
   </div>
 </div>`;
 
-studentProfile2.innerHTML = body;
+studentProfile.innerHTML = body;
 }
 // ---------------------------------Delete Student--------------------------------------
 

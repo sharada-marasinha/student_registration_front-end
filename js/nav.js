@@ -2,7 +2,7 @@ let navBody = document.getElementById("navBar");
 function loadNav(){
     navBody.innerHTML = `
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">Student Register Form</a>
+    <a class="navbar-brand" href="index.html">University</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar"
         aria-label="Toggle navigation">
@@ -22,9 +22,6 @@ function loadNav(){
                     <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Login</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="registration_form.html">Register</a>
                 </li>
                 <li class="nav-item">
@@ -33,9 +30,6 @@ function loadNav(){
                 <li class="nav-item">
                     <a class="nav-link" href="profile_list_form.html">View As Profiles</a>
                   </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Manage All</a>
-                </li>
             </ul>
         </div>
     </div>
