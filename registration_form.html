@@ -21,6 +21,11 @@
     <form>
         <table align="center" cellpadding="10" id="tbl">
 
+            <td>ID <br><br></td>
+                <td><input type="text" name="id" id="id" maxlength="30" />
+                    
+                </td>
+
             <!----- First Name ---------------------------------------------------------->
             <tr>
                 <td>First Name <br><br></td>
@@ -407,6 +412,7 @@
 
                 <td colspan="2" align="center" class="submitTd">
                     <input type="button" id="btnSubmit" onclick="submitForm()" value="Submit">
+                    <input type="button" id="btnUpdate" onclick="updateData()" value="Update">
                     <input type="reset" id="btnReset" value="Reset">
                 </td>
             </tr>

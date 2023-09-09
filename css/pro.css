@@ -74,3 +74,10 @@
       padding-left: 0;
     }
   }
+
+  .icons .fa{
+    color: #190492;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+ }

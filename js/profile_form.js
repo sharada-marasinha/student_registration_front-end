@@ -115,29 +115,31 @@ function lodeProfile(result) {
   let body = ``;
   body += `
   <div class="sidenav">
-  <div class="profile">
-    <img src="profile/${stdObj.imageName}" alt="">
+    <div class="profile">
+      <img src="profile/${stdObj.imageName}" alt="">
 
       <div class="name">
           ${stdObj.firstName+" "+stdObj.lastName}
       </div>
       <div class="email">
-      ${stdObj.email}
+        ${stdObj.email}
       </div>
-  </div>
-
-  <div class="sidenav-url">
-      <div class="url">
-
-          <hr align="center">
+        <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
       </div>
-      <div class="url">
-      <button class="btn btn-danger" onclick="deleteStudent(${stdObj.id})">Delete</button>
       <button class="btn btn-success" onclick="">Update</button>
-          <hr align="center">
-      </div>
+      <button class="btn btn-secondary" onclick="deleteStudent(${stdObj.id})">View In Table</button>
+      <button class="btn btn-danger" onclick="deleteStudent(${stdObj.id})">Delete</button>
+
   </div>
-</div>
+
+
+
+  </div>
+  </div>
 <!-- End -->
 
 <!-- Main -->
