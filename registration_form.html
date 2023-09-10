@@ -22,14 +22,14 @@
         <table align="center" cellpadding="10" id="tbl">
 
             <td>ID <br><br></td>
-                <td><input type="text" name="id" id="id" maxlength="30" />
+                <td><input type="text" name="id" id="id" maxlength="30" placeholder="Not Need Id For Add Student" />
                     
                 </td>
 
             <!----- First Name ---------------------------------------------------------->
             <tr>
                 <td>First Name <br><br></td>
-                <td><input type="text" name="firstName" id="f_name" maxlength="30" />
+                <td><input type="text" name="firstName" id="f_name" maxlength="30" placeholder="saman" />
                     (max 30 characters a-z and A-Z)
                 </td>
 
@@ -37,7 +37,7 @@
             <!----- Last Name ---------------------------------------------------------->
             <tr>
                 <td>Last Name <br><br></td>
-                <td><input type="text" name="lastname" id="l_name" maxlength="30" />
+                <td><input type="text" name="lastname" id="l_name" maxlength="30" placeholder="kumara" />
                     (max 30 characters a-z and A-Z)
                 </td>
             </tr>
@@ -142,13 +142,13 @@
             <!----- Email Id ---------------------------------------------------------->
             <tr>
                 <td>Email</td>
-                <td><input type="text" id="email" name="email" maxlength="100" /></td>
+                <td><input type="text" id="email" name="email" maxlength="100" placeholder="sample@email.com" /></td>
             </tr>
             <!----- Mobile Number ---------------------------------------------------------->
             <tr>
                 <td>Mobile Number</td>
                 <td>
-                    <input type="text" id="mobileNumber" name="mobileNumber" maxlength="10" />
+                    <input type="text" id="mobileNumber" name="mobileNumber" maxlength="10" placeholder="+123456789" />
                     (10 digit number)
                 </td>
             </tr>
@@ -181,7 +181,7 @@
             <!------------------------- Address ---------------------------------->
             <tr>
                 <td>ADDRESS <br><br></td>
-                <td><textarea id="address" name="address" rows="4" cols="30"></textarea></td>
+                <td><textarea id="address" name="address" rows="4" cols="30" placeholder="No 27/ sample Road - abc"></textarea></td>
             </tr>
             <!-------------------------- City -------------------------------------->
             <td>City</td>
@@ -192,7 +192,7 @@
             <!------------------------ Pin Code ------------------------------------>
             <tr>
                 <td>Pin Code</td>
-                <td><input type="text" name="pinCode" id="pinCode" maxlength="6" />
+                <td><input type="text" name="pinCode" id="pinCode" maxlength="6" placeholder="1234" />
                     (6 digit number)
                 </td>
             </tr>
@@ -206,7 +206,7 @@
             <!----- Country ---------------------------------------------------------->
             <tr>
                 <td>Country</td>
-                <td><input type="text" id="country" name="country" value="Sri-Lanka" readonly="readonly" /></td>
+                <td><input type="text" id="country" name="country" placeholder="Sri-lanka" /></td>
             </tr>
             <!----- Hobbies ---------------------------------------------------------->
             <tr>
@@ -377,14 +377,7 @@
                     Image Uploader
                 </td>
                 <td>
-                   
-                        <!-- File input field -->
-                        <input type="file" name="file" id="img">
-                        <!-- Other form fields if needed -->
-                        <!-- <button type="submit" onclick="imageUpload()">Upload File</button> -->
-                        <input type="button" value="Upload File" onclick="imageUpload()">
-                    
-                    
+                        <input type="file" name="file" id="img" class="btn btn-outline-secondary">
                 </td>
             </tr>
             <tr>
@@ -395,25 +388,16 @@
                 <td></td>
                 <td></td>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
-            </tr>
+     
+       
+       
             <!----- Submit and Reset ------------------------------------------------->
             <tr>
 
                 <td colspan="2" align="center" class="submitTd">
-                    <input type="button" id="btnSubmit" onclick="submitForm()" value="Submit">
-                    <input type="button" id="btnUpdate" onclick="updateData()" value="Update">
-                    <input type="reset" id="btnReset" value="Reset">
+                    <input type="button" id="btnSubmit" class="btn btn-primary" onclick="submitForm()" value="Submit">
+                    <input type="button" id="btnUpdate" class="btn btn-success" onclick="updateData()" value="Update">
+                    <input type="reset" id="btnReset" class="btn btn-light" value="Reset">
                 </td>
             </tr>
 

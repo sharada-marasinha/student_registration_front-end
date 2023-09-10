@@ -29,17 +29,37 @@ function loadProfiles() {
                   <h4>${element.email}</h4>
                   <h6>${element.country}</h6>
                   <br>
-                  <input type="button" class="btn btn-danger" onclick="deleteStudent(${element.id
-          })" value="Delete">
-                  <input type="button" class="btn btn-success" value="Update">
-                  <input type="button" class="btn btn-primary" onclick="viewprofile(${element.id})" value="View Profile">
-                  <h6 class="pinCode">PIN:STD${element.selectedCourse}#0${element.id}</h6>
+                  <input type="button" class="btn btn-danger" onclick="deleteStudent(${
+                    element.id
+                  })" value="Delete">
+                  <input type="button" class="btn btn-success" onclick="updateProfile(${
+                    element.id
+                  })" value="Update">
+                  <input type="button" class="btn btn-primary" onclick="viewprofile(${
+                    element.id
+                  })" value="View Profile">
+                  <h6 class="pinCode">PIN:STD${element.selectedCourse}#0${
+          element.id
+        }</h6>
               </div>
           </div>`;
       });
 
       studentProfile.innerHTML = body;
     });
+}
+
+function updateProfile(id) {
+  const url = `registration_form.html?param1=${id}`;
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+  //document.getElementById("target-content").innerHTML = data;
+    })
+    .catch((error) => {
+      console.error("Error loading target.html:", error);
+    });
+  alert("Profile" + id);
 }
 
 // -----------------------calling loadProfile Methords --------------------
@@ -74,12 +94,16 @@ function searchBtn() {
             <h4>${element.email}</h4>
             <h6>${element.country}</h6>
             <br>
-            <input type="button" class="btn btn-danger" onclick="deleteStudent(${element.id
-    })" value="Delete">
+            <input type="button" class="btn btn-danger" onclick="deleteStudent(${
+              element.id
+            })" value="Delete">
             <input type="button" class="btn btn-success" value="Update">
-            <input type="button" class="btn btn-primary" onclick="viewprofile(${element.id
-    })" value="View Profile">
-            <h6 class="pinCode">PIN:STD${element.selectedCourse}#0${element.id}</h6>
+            <input type="button" class="btn btn-primary" onclick="viewprofile(${
+              element.id
+            })" value="View Profile">
+            <h6 class="pinCode">PIN:STD${element.selectedCourse}#0${
+          element.id
+        }</h6>
         </div>
     </div>`;
       });
@@ -92,26 +116,24 @@ function searchBtn() {
 function viewprofile(id) {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-  
+
   var requestOptions = {
-    method: 'GET',
+    method: "GET",
     headers: myHeaders,
-    redirect: 'follow'
+    redirect: "follow",
   };
-  
+
   fetch(`http://localhost:8080/student/std-id/${id}`, requestOptions)
-    .then(response => response.text())
-    .then(result => lodeProfile(result)
-    )
-    .catch(error => console.log('error', error));
+    .then((response) => response.text())
+    .then((result) => lodeProfile(result))
+    .catch((error) => console.log("error", error));
 }
 
 function lodeProfile(result) {
-  
   //window.open("student_profile.html", "top");
 
- let stdObj = JSON.parse(result);
- 
+  let stdObj = JSON.parse(result);
+
   let body = ``;
   body += `
   <div class="sidenav">
@@ -119,7 +141,7 @@ function lodeProfile(result) {
       <img src="profile/${stdObj.imageName}" alt="">
 
       <div class="name">
-          ${stdObj.firstName+" "+stdObj.lastName}
+          ${stdObj.firstName + " " + stdObj.lastName}
       </div>
       <div class="email">
         ${stdObj.email}
@@ -131,8 +153,12 @@ function lodeProfile(result) {
         <i class="fa fa-linkedin"></i>
       </div>
       <button class="btn btn-success" onclick="">Update</button>
-      <button class="btn btn-secondary" onclick="deleteStudent(${stdObj.id})">View In Table</button>
-      <button class="btn btn-danger" onclick="deleteStudent(${stdObj.id})">Delete</button>
+      <button class="btn btn-secondary" onclick="deleteStudent(${
+        stdObj.id
+      })">View In Table</button>
+      <button class="btn btn-danger" onclick="deleteStudent(${
+        stdObj.id
+      })">Delete</button>
 
   </div>
 
@@ -153,7 +179,7 @@ function lodeProfile(result) {
                   <tr>
                       <td>Full Name</td>
                       <td>:</td>
-                      <td>${stdObj.firstName+" "+stdObj.lastName}</td>
+                      <td>${stdObj.firstName + " " + stdObj.lastName}</td>
                   </tr>
                   <tr>
                   <td>Email</td>
@@ -193,7 +219,7 @@ function lodeProfile(result) {
                   <tr>
                       <td>Hobbies</td>
                       <td>:</td>
-                      <td>${stdObj.hobbies+" : "+stdObj.otherHobby}</td>
+                      <td>${stdObj.hobbies + " : " + stdObj.otherHobby}</td>
                   </tr>
                   <tr>
                       <td>Selected Course</td>
@@ -230,7 +256,7 @@ function lodeProfile(result) {
   </div>
 </div>`;
 
-studentProfile.innerHTML = body;
+  studentProfile.innerHTML = body;
 }
 // ---------------------------------Delete Student--------------------------------------
 

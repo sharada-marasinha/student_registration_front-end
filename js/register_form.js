@@ -228,3 +228,4 @@ function updateData() {
     .catch((error) => console.log("error", error));
   alert("Update");
 }
+
