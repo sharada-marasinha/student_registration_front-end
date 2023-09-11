@@ -1,13 +1,8 @@
 let studentTable = document.getElementById("tblStudent");
 let studentTable2 = document.getElementById("tblStudent2");
-
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
-
+//-------------------------VIEW AS TABLE ------------------------------>>
 var requestOptions = {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
+    method: "GET"
 };
 
 let tblBody = `<tr>
@@ -55,7 +50,7 @@ fetch("http://localhost:8080/student")
                     <td>${element.city}</td>
                     <td>${element.pinCode}</td>
                    
-                    </tr>`;
+                </tr>`;
                     tblBody2 += `<tr>
                     <td>${element.id}</td>
                     <td>${element.firstName}</td>
@@ -68,7 +63,7 @@ fetch("http://localhost:8080/student")
                     <td>${element.graduation}</td>
                     <td>${element.masters}</td>
                     <td>${element.selectedCourse}</td>
-                    </tr>`;
+                </tr>`;
 
     });
 

@@ -1,4 +1,6 @@
-// script.js
+
+//----------------------DashNavigation--------------------
+
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll("nav a");
     

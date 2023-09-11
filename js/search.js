@@ -1,3 +1,4 @@
+//----------------------SEARCH------------------------>>
 function searchBtn() {
     const searchText = document.getElementById("search_bar").value;
     var myHeaders = new Headers();

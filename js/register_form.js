@@ -190,7 +190,7 @@ function retrieveValues_And_Create_Object() {
   formData.append("file", image.files[0]);
 }
 
-//---------------add student----------------------
+//---------------------------- ADD ------------------------------>>
 
 function submitForm() {
   retrieveValues_And_Create_Object();
@@ -214,7 +214,7 @@ function submitForm() {
     );
 }
 
-//---------------UPDATE----------------------------------
+//---------------------------UPDATE------------------------------>>
 
 function updateData() {
   const id = document.getElementById("id").value;
@@ -222,8 +222,7 @@ function updateData() {
 
   var requestOptions = {
     method: "PUT",
-
-    body: formData,
+    body: formData
   };
 
   fetch(`http://localhost:8080/student/${id}`, requestOptions)
