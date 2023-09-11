@@ -1,76 +1,80 @@
-function Student(
-  firstName,
-  lastName,
-  dobDay,
-  dobMonth,
-  dobYear,
-  email,
-  mobileNumber,
-  gender,
-  address,
-  city,
-  pinCode,
-  state,
-  country,
-  hobbies,
-  otherHobby,
-  classXBoard,
-  classXPercentage,
-  classXYrOfPassing,
-  classXIIBoard,
-  classXIIPercentage,
-  classXIIXYrOfPassing,
-  graduationBoard,
-  graduationPercentage,
-  graduationYrOfPassing,
-  mastersBoard,
-  mastersPercentage,
-  mastersYrOfPassing,
-  selectedCourse
-) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-  this.dateOfBirth = dobDay + " " + dobMonth + " " + dobYear;
-  this.email = email;
-  this.mobileNumber = mobileNumber;
-  this.gender = gender;
-  this.address = address;
-  this.city = city;
-  this.pinCode = pinCode;
-  this.state = state;
-  this.country = country;
-  this.hobbies = hobbies;
-  this.otherHobby = otherHobby;
-  this.classX =
-    "board : " +
-    classXBoard +
-    ", percentage : " +
-    classXPercentage +
-    ", yearOfPassing : " +
-    classXYrOfPassing;
-  this.classXII =
-    "board : " +
-    classXIIBoard +
-    ", percentage : " +
-    classXIIPercentage +
-    ", yearOfPassing : " +
-    classXIIXYrOfPassing;
-  this.graduation =
-    "board : " +
-    graduationBoard +
-    ", percentage : " +
-    graduationPercentage +
-    ", yearOfPassing : " +
-    graduationYrOfPassing;
-  this.masters =
-    "board : " +
-    mastersBoard +
-    ", percentage : " +
-    mastersPercentage +
-    ", yearOfPassing : " +
-    mastersYrOfPassing;
-  this.selectedCourse = selectedCourse;
+class Student{
+  constructor(
+    firstName,
+    lastName,
+    dobDay,
+    dobMonth,
+    dobYear,
+    email,
+    mobileNumber,
+    gender,
+    address,
+    city,
+    pinCode,
+    state,
+    country,
+    hobbies,
+    otherHobby,
+    classXBoard,
+    classXPercentage,
+    classXYrOfPassing,
+    classXIIBoard,
+    classXIIPercentage,
+    classXIIXYrOfPassing,
+    graduationBoard,
+    graduationPercentage,
+    graduationYrOfPassing,
+    mastersBoard,
+    mastersPercentage,
+    mastersYrOfPassing,
+    selectedCourse
+  ) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.dateOfBirth = dobDay + " " + dobMonth + " " + dobYear;
+    this.email = email;
+    this.mobileNumber = mobileNumber;
+    this.gender = gender;
+    this.address = address;
+    this.city = city;
+    this.pinCode = pinCode;
+    this.state = state;
+    this.country = country;
+    this.hobbies = hobbies;
+    this.otherHobby = otherHobby;
+    this.classX =
+      "board : " +
+      classXBoard +
+      ", percentage : " +
+      classXPercentage +
+      ", yearOfPassing : " +
+      classXYrOfPassing;
+    this.classXII =
+      "board : " +
+      classXIIBoard +
+      ", percentage : " +
+      classXIIPercentage +
+      ", yearOfPassing : " +
+      classXIIXYrOfPassing;
+    this.graduation =
+      "board : " +
+      graduationBoard +
+      ", percentage : " +
+      graduationPercentage +
+      ", yearOfPassing : " +
+      graduationYrOfPassing;
+    this.masters =
+      "board : " +
+      mastersBoard +
+      ", percentage : " +
+      mastersPercentage +
+      ", yearOfPassing : " +
+      mastersYrOfPassing;
+    this.selectedCourse = selectedCourse;
+  }
+
 }
+
 let formData;
 var student;
 let image;
